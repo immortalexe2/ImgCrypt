@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ action }} Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+<div class="container mt-5 text-center">
+    <h2>{{ action }} Successfully ✅</h2>
+    {% if key %}
+        <p><strong>Keep This Key Safe for Decryption:</strong></p>
+        <textarea class="form-control mb-3" readonly>{{ key }}</textarea>
+    {% endif %}
+    <a href="{{ url_for('download', filename=filename) }}" class="btn btn-primary">Download {{ action }} File</a>
+    <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+</div>
+</body>
+</html>
